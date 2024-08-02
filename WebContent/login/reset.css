@@ -1,0 +1,15 @@
+@charset "UTF-8";
+html, button, fieldset, div, dl, dt, dd, em, span, del, tr, td, body, h1, h2, input, button, ul, li, ol, a, img, p, div, header , nav, main{
+	margin: 0; 
+	padding: 0;
+	line-height: 1.0; letter-spacing: 0em;
+	
+}
+
+ul, ol, li {list-style:none;}
+a{text-decoration: none ; color:#000;}
+button{cusor: pointer; border: 0; background: none;}
+textarea{resize:none; border: 0;}
+fieldset{border: 0;}
+.skip{display: none;} 
+

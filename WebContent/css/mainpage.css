@@ -1,0 +1,503 @@
+@charset "UTF-8";
+
+/* 초기설정 */
+* {
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  color: black;
+  /* overflow: hidden; */
+}
+
+/* header, footer 초기설정 */
+/*  header, footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+} */
+/* 
+ header {
+  margin-bottom: 20px;
+}   */
+
+.lprod_ul a{
+	text-decoration: none;
+		color: gray;
+	font-weight: bold;
+}
+/* 초기설정 끝ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+
+
+/* header 시작 (nav포함 되어있음)*/
+/* header 전체 */
+.div_container{
+   display: flex;
+}
+/* 카테고리 + 로고 + 검색창 */
+.category_logo_search_container{
+   display: flex;
+   justify-content: center;
+   padding-top: 50px;
+   /* flex-direction: row; */
+}
+
+/* 로그인 + 장바구니 */
+.loginCart_container{
+	display: flex;
+    justify-content: center;
+	padding-top: 40px;
+	padding-left: 10px;
+}
+
+/* 위치 상세 설정 */
+.logo{
+	padding-right: 25px;
+    margin-left: -50px;
+}
+
+.main_login .main_cart{
+	padding-top: 10px;
+}
+
+.main_cart{
+	padding-left: 15px;
+}
+
+/* header끝--------------------------------------------------------- */
+
+.lprod_container {
+	margin-right: 4%;	
+}
+
+.lprod_img{
+	margin-left: 220px;
+	width: 150px;
+	height: 150px;
+	flex: 30% ;
+}
+
+/* ':hover' : 마우스 올렸을때,  
+	 부모 : #lprod_hover, 자식,손자들: #left ul li  
+    ' #left ul li' (띄어쓰기: 자식의 손자들을 뜻함) */
+    
+/* 자식의 손자들을 먼저 숨기기 */
+.lprod_ul ul {
+   display: none; /*숨기기 */
+   /* overflow: visible; */
+   position: absolute;
+   z-index: 3;
+   border: 1px solid lightgray;
+   left: 220px;   
+   width: 210px;
+   background-color: white;
+   transition-duration: 500ms;
+}
+.lprod_ul ul li img{
+	left: 5px;
+	width: 40px;
+	height: 35px; 
+	
+}
+.lprod_ul ul li {
+	/* position: relative; */
+	right: 5px;
+	/* margin-top: 2px; */
+}
+
+.lprod_ul ul li a{
+	text-decoration: none;
+}
+
+nav div a{
+	text-decoration: none;
+}
+
+/* 부모에 마우스 올렸을시 자식 다 보여줘라 */
+.lprod_container:hover .lprod_ul > ul {
+   display: block;  /*'block': 나타다나, 보이다 */
+}
+
+
+/* 자식의손자들(카테고리 아이콘, 패션의류/잡화)에 마우스 올렸을시 효과를 줌 */
+.lprod_container:hover .lprod_ul li a:hover {
+  font-weight: bold; /* 굵은체 */
+  color: #1b5ac2; /* 글자색 */
+  text-decoration-line: underline; /* 밑줄 */
+  text-decoration-color: currentColor; /* 밑줄의색을 color의 색으로 지정해라 */
+}
+
+
+/* 검색창 카테고리 선택 */
+.selectBox {
+  position: relative;
+  width: 150px;
+  height: 65px;
+  border: 2px solid #1b5ac2;
+}
+.selectBox .select {
+  font-size: 18px;
+  width: inherit; /* inherit: 부모의색 상속받는다 */
+  height: inherit;
+  background: transparent;
+  border: 0 none;
+  outline: 0 none;
+  padding: 5px;
+  position: relative;
+  z-index: 3; /* select가 위로 올라와야 함 */
+}
+.selectBox .select option {
+  font-size: 18px;
+  background: white;
+  color: black;
+  padding: 5px;
+}
+ 
+ /* 검색단어 입력창 */
+/* 검색창 placeholder설정 */
+input: -ms-input-placeholder {color:#a8a8a8;}
+input:: -webkit-input-placeholder {color:#a8a8a8;}
+input:: -moz-placeholder {color:#a8a8a8;}
+
+.search_input{
+   font-size: 18px;
+   width: 450px;
+   height: 65px;
+   padding: 10px;
+   border: 1px solid #1b5ac2;
+   outline: none;
+   float: left;
+}
+ /* 검색단어입력 오른쪽 버튼(검색) */
+.submit_button{
+   font-size: 18px;
+   width: 80px;
+   height: 65px;
+   border: 0;
+   background: #1b5ac2;
+   outline: none;
+   float: right;
+   color: #ffffff;
+   margin-right: 15px;
+}
+
+/* 연관검색어 */
+.search_wrapper {
+    /* display: flex;
+    flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+}
+.invisible{
+    display: none;
+}
+
+#suggestion_box {
+    margin-top: 1px;
+    background: white;
+    padding: 0;
+}
+
+#suggested_items{
+   font-size: 18px;
+   width: 450px;
+   height: 65px;
+/*    padding: 10px; */
+   /* border: 1px solid #1b5ac2; */
+    overflow: auto; /* 스크롤바 추가 */
+}
+
+/* 마우스 올리면 색 변화 */
+#suggested_items:hover{
+    color: #1b5ac2;
+    text-decoration-line: underline; /* 밑줄 */
+  	text-decoration-color: currentColor; /* 밑줄의색을 color의 색으로 지정해라 */
+}
+
+/* .lprod_img{
+	flex: 15%;
+   display: inline-block;
+   font-size: 18px;
+   padding: 10px 0;
+   border: 3px solid white;
+   display: flex;
+   justify-content: left;
+   align-items: center;
+} */
+
+
+/* 중앙 본문 시작 */
+/* 위치 설정   */
+.section_container{
+	display: flex;
+	justify-content: center;
+	/* position: absolute;
+    top: 200px; */
+    width: 1920px;
+	height: 450px;
+    /* margin: 0; */
+}
+.ad_inner{
+	top: 0px;
+}
+
+.ad_ul ul{
+	/* display: flex;
+	justify-content: center; */
+	position: absolute;
+	/* z-index:3; */
+	margin-left: 17%;
+	top: 200px;
+}
+.ad_ul ul li{
+	width: 180px;
+	height: 58px;
+}
+ 
+.ad_img1,
+.ad_img2,
+.ad_img3,
+.ad_img4,
+.ad_img5,
+.ad_img6 {
+  position: absolute;
+  top: 153px;
+  left: 0;
+  width: 30%;
+  height: 10%;
+  display: block;
+}
+.ad_container:hover .ad_img1,
+.ad_li1:hover ~ .ad_img1{
+	  display: block;
+}
+
+.ad_container:hover .ad_img2,
+.ad_li2:hover ~ .ad_img1{
+	  position: absolute;
+	  display: none;
+}
+/* .ad_container:hover .ad_img2{
+	  display: block;
+} */
+/*
+.ad_container:hover .ad_img1,
+.ad_container:hover .ad_img2,
+.ad_container:hover .ad_img3,
+.ad_container:hover .ad_img4,
+.ad_container:hover .ad_img5,
+.ad_container:hover .ad_img6,
+.ad_li1:hover ~ .ad_img1/* ,
+.ad_li2:hover ~ .ad_img1,
+.ad_li3:hover ~ .ad_img1,
+.ad_li4:hover ~ .ad_img1,
+.ad_li5:hover ~ .ad_img1,
+.ad_li6:hover ~ .ad_img1 */{
+  display: block;
+}
+ 
+ /* 
+ .ad_container:hover .ad_img1 img,
+.section_container:hover .ad_img1 img{
+ 	  display: none;
+ 	  position: absolute;
+ }
+ 
+  .ad_container:hover .ad_img1 img,
+.section_container:hover .ad_img1 img{
+ 	  display: none;
+ 	  position: absolute;
+ } */
+ 
+/*  .ad_container:hover .ad_img2,
+ .ad_li2:hover .ad_img2{
+ 	  display: block;
+ } */
+
+/* .ad_container:hover .ad_img1
+.ad_container:hover .ad_img2,
+.ad_container:hover .ad_img3,
+.ad_container:hover .ad_img4,
+.ad_container:hover .ad_img5,
+.ad_container:hover .ad_img6,
+.ad_li1:hover .ad_img1
+.ad_li2:hover .ad_img2,
+.ad_li3:hover .ad_img3,
+.ad_li4:hover .ad_img4,
+.ad_li5:hover .ad_img5,
+.ad_li6:hover .ad_img6 {
+  display: none;
+} */
+
+
+
+/* .sel-inner {
+	display: flex;
+	left: 10%;
+}
+.carousel-item {
+    position: relative;
+    right: 17%;
+    width: 700px;
+    height: 700px;
+    
+    top: 31px;
+}
+
+#carouselExample{
+	position: absolute;
+    top: 200px;
+} */
+
+
+
+/* 기존숙제꺼 */
+#right {
+   background-color: #F8BBD0;
+   width: 25%;
+   padding: 2%;
+}
+
+
+
+#main {
+  background-color: white;
+  width: 55%;
+  height: 100%;
+}
+
+#main iframe {
+  width: 100%;
+  height: 500px;
+}
+
+
+body {
+/*   background-color: white; */
+}
+
+
+/* section 상품 카테고리별 목록 */
+#categoryBestUnit {
+    position: relative;
+    /* margin: 100px auto 0 auto; */
+    width: 500px; */
+    margin-left: 100px;
+    padding-left: 48px;
+}
+.category-best-unit.kitchen {
+    border-top: 2px solid #62ab66;
+}
+.category-best-unit {
+    width: 1920px;
+    margin-bottom: 20px;
+    background-color: #fff;
+}
+
+.category-best-unit .category-best {
+    position: relative;
+}
+.category-best-unit .title {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    width: 114px;
+    padding: 40px 0 0 22px;
+}
+
+.category-best-unit .promotion {
+    position: relative;
+    float: left;
+    margin-left: 170px;
+    width: 440px;
+    height: 600px;
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    background: #fafafa;
+    text-align: center;
+}
+
+.category-best-unit .best-product-list {
+    position: relative;
+    float: left;
+    width: 548px;
+    height: 600px;
+    overflow: hidden;
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+}
+
+.prod-list{
+	display: flex;
+}
+/* footer */
+/* 
+.foo_container{
+	top: 100px;
+} */
+footer {
+  /* height: 50px; */
+  margin-top: 70%;
+  display: flex;
+  color: #aaa;
+  
+  
+}
+
+.footer .foo_container {
+	display: flex;
+    width: 1020px;
+    height: 100px;
+    margin: 500px;
+    font-size: 12px;
+    color: gray;
+    /* line-height: 150%; */
+}
+
+.foo_container .footer-content address {
+    float: left;
+    width: 260px;
+}
+
+address, caption, cite, code, dfn, em, var {
+	color: gray;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.foo_container .contact-info {
+    float: left;
+    width: 270px;
+    color: #555;
+}
+
+.foo_container .safe-service {
+    float: right;
+    width: 250px;
+    font-size: 12px;
+}
+
+/*  */
+.prod_container{
+	margin: 400px;
+}
+.prod2_contaioner{
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+   /* padding-top: 50px; */
+}
+.prod_img{
+	display: flex;
+	width: 400x;
+	height:350px;
+	border: 1px solid gray;
+}
+.prod_list_img{
+	display: flex;
+	border: 1px solid gray;
+	width: 350px;
+	height:300px;
+}

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 이 문서는 maBatis에서 처리할 SQL문을 작성하는 문서 입니다.-->
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org/DTD Mapper3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+   
+<!-- <mapper>태그의 namespace속성에 설정되는 값은 Java에서 
+	  SQL문을 호출할때 같이 사용되는 이름이다  -->   
+   
+<!-- mapper타입마다 namespace를 다르게 주는게 좋아요 -->   
+<mapper namespace="membership"> 
+
+<!-- 
+MypageBankInsert=>vo : MembershipVO [membership_no=0, mem_id=user4, membership_code=null, membership_hire_date=null
+		, membership_retire_date=null, membership_delete=null, membership_bank_name=카카오뱅크
+		, membership_bank_no=123123, membership_card_name=null, membership_card_no=null, membership_card_cvc=null
+		, membership_card_pass=null, membership_discount_rate=0]
+ -->
+<update id="insertBank" parameterType="membershipVo">
+	update membership set membership_code= 'Y', membership_hire_date = sysdate,
+	membership_bank_name = #{membership_bank_name}, membership_bank_no = #{membership_bank_no},
+	membership_discount_rate = 0.2
+	where mem_id = #{mem_id}
+</update>
+	
+<select id="getBank" parameterType="string" resultType="membershipVo">
+	select * from membership where mem_id = #{mem_id} and membership_code = 'Y'
+</select>
+	
+<select id="getmembershipYN" parameterType="string" resultType="string">
+	select membership_code from membership where mem_id = #{mem_id} and membership_code = 'Y'
+</select>
+
+<update id="deleteMembership" parameterType="string">
+ 	update membership set membership_code = 'N' , membership_retire_date = sysdate where mem_id = #{mem_id}
+</update>
+
+<insert id="insertMembership" parameterType="string">
+	insert into membership(membership_no,mem_id,membership_code)
+	values((select nvl(max(membership_no),0)+1 from membership),#{mem_id},'N')
+</insert>
+
+
+<update id="updateBank" parameterType="membershipVo">
+	update membership set  membership_hire_date = sysdate,
+	membership_bank_name = #{membership_bank_name}, membership_bank_no = #{membership_bank_no}
+	where mem_id = #{mem_id}
+</update>
+
+</mapper>

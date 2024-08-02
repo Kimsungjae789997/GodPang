@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 이 문서는 maBatis에서 처리할 SQL문을 작성하는 문서 입니다.-->
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org/DTD Mapper3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+   
+<!-- <mapper>태그의 namespace속성에 설정되는 값은 Java에서 
+	  SQL문을 호출할때 같이 사용되는 이름이다  -->   
+   
+<!-- mapper타입마다 namespace를 다르게 주는게 좋아요 -->   
+<mapper namespace="lprod"> 
+	<!-- 상품 카테고리목록들 다 가져오기 -->
+	<select id="getAllLprod" resultType="lprodVo">
+		
+		select * from lprod
+	</select>
+	
+	<insert id="insertLprod" parameterType="lprodVo">
+		insert into lprod(lprod_gu, lprod_nm)
+		values(#{lprod_gu},#{lprod_nm})
+	</insert>
+	
+	<update id="updateLprod" parameterType="lprodVo">
+		update lprod set lprod_nm = #{lprod_nm} where lprod_gu = #{lprod_gu}
+	</update>
+	
+	<delete id="deleteLprod" parameterType="lprodVo">
+		delete from lprod where lprod_gu = #{lprod_gu}
+	</delete>
+
+</mapper>

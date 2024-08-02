@@ -1,0 +1,188 @@
+@charset "UTF-8";
+
+.nognb {
+    position: relative;
+    height: 85px;
+    border-bottom: 1px solid #e7e7e7;
+    margin: 0 auto;
+}
+.logo a {
+    display: block;
+    float: left;
+    width: 174px;
+    height: 41px;
+}
+div .logo{
+	width: 1020px;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+#body {
+    width: 1020px;
+    margin: 0 auto 20px;
+}
+#body {
+    position: relative;
+    clear: both;
+    font-size: 12px;
+    z-index: 20;
+}
+#body .middle {
+    clear: both;
+    padding: 0 0 40px;
+    background: #fff;
+}
+.ordTitle {
+    height: 70px;
+    overflow: hidden;
+    border-bottom: 3px solid #777;
+}
+.ordTitle .title {
+    float: left;
+    margin-top: 5px;
+    padding-left: 0;
+    line-height: 70px;
+    font-size: 30px;
+    color: #111;
+}
+.ordTitle .steps {
+    float: right;
+    padding-right: 5px;
+    margin-top: 20px;
+    line-height: 50px;
+    font-size: 15px;
+    color: #bbb;
+    font-weight: 700;
+}
+
+.customer__root {
+    margin-top: 30px;
+}
+
+.customer__h2 {
+    padding-left: 2px;
+    margin-bottom: 8px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #333;
+}
+.customer__table {
+    width: 100%;
+    border-top: 2px solid #cecece;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+    font-size: 15px;
+}
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+.customer__col--1 {
+    width: 104px;
+    border: solid #e4e4e4;
+    border-width: 0 1px 1px 0;
+    padding: 7px 10px 7px 15px;
+    font-weight: 700;
+    text-align: right;
+    background: #f4f4f4;
+}
+.customer__col--2 {
+    border-bottom: 1px solid #e4e4e4;
+    padding: 10px 16px;
+}
+.page-pc.page-order button {
+    padding: 4px 8px;
+    border: 1px solid #999;
+    color: #333;
+    border-radius: 2px;
+    box-shadow: 0 -2px 0 rgba(0,0,0,.1) inset;
+    font-size: 11px;
+}
+
+.delivery-address__caption-header {
+    padding-left: 2px;
+    margin: 30px 0 8px;
+    text-align: left;
+    font-size: 20px;
+    font-weight: 700;
+}
+.delivery-address {
+    border-top: 2px solid #cecece;
+    width: 100%;
+}
+
+.box{
+	display: block;
+}
+
+.delivery-address__th{
+	border-right: 1px solid #e4e4e4;
+    border-bottom: 1px solid #e4e4e4;
+    padding: 10px 10px 7px 15px;
+    width: 104px;
+    background-color: #f4f4f4;
+    text-align: right;
+	
+}
+
+.delivery-address__content{
+	padding-top: 12.5px;
+    padding-bottom: 12.5px;
+}
+
+.customer__col--2 {
+    border-bottom: 1px solid #e4e4e4;
+    padding: 10px 16px;
+}
+
+
+#paymentBtn{
+	width: 240px; 
+	height: 60px; 
+	font-size: 20px; 
+	font-weight: bold; 
+	background-color: #448FF2; 
+	color:white; 
+	border-radius: 13px;
+	border:none;
+	
+}
+
+
+
+
+body, div, dl, dt, dd, ul, ol, menu, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, blockquote, th, td, p {
+    margin: 0;
+    padding: 0;
+}
+
+body, dd, div, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, li, ol, pre, ul {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    color: #333;
+    font-family: "돋움", Dotum, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    display: block;
+}
+
+body, input, textarea, select, button, table {
+    font-family: sans-serif;
+    font-size: 100%;
+}

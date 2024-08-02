@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 이 문서는 maBatis에서 처리할 SQL문을 작성하는 문서 입니다.-->
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org/DTD Mapper3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+   
+<!-- <mapper>태그의 namespace속성에 설정되는 값은 Java에서 
+	  SQL문을 호출할때 같이 사용되는 이름이다  -->   
+   
+<!-- mapper타입마다 namespace를 다르게 주는게 좋아요 -->   
+<mapper namespace="admin"> 
+
+	<!-- 관리자 코드로 로그인 -->
+	<select id="adminLogin" parameterType="string" resultType="string">
+		select * from admin
+		where admin_code=#{admin_code}
+	</select>
+	
+	
+	
+
+
+
+</mapper>

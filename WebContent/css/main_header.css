@@ -1,0 +1,227 @@
+@charset "UTF-8";
+
+
+/* .search_item{
+   height: 40px;
+   width: 400px;
+   border: 1px solid #1b5ac2;
+   background: #ffffff;
+} */
+
+
+/* 초기설정 */
+* {
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  color: black;
+  overflow: hidden;
+}
+
+/* header, footer 초기설정 */
+ header, footer {
+  /* display: flex; */
+  /* justify-content: center; */
+  align-items: center;
+  background-color: white;
+}
+
+ header {
+  margin-bottom: 20px;
+}  
+
+/* 초기설정 끝ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+
+/* header 
+
+*/
+
+.pad{
+   padding-top: 40px;
+}
+
+/* 검색창 placeholder설정 */
+input: -ms-input-placeholder {color:#a8a8a8;}
+input:: -webkit-input-placeholder {color:#a8a8a8;}
+input:: -moz-placeholder {color:#a8a8a8;}
+
+.search_container{
+   display: flex;
+   justify-content: center;
+   padding-top: 10px;
+   /* flex-direction: row; */
+}
+
+.selectBox {
+   
+  position: relative;
+  width: 150px;
+  height: 65px;
+  border: 2px solid #1b5ac2;
+}
+.selectBox .select {
+   font-size: 18px;
+  width: inherit;
+  height: inherit;
+  background: transparent;
+  border: 0 none;
+  outline: 0 none;
+  padding: 5px;
+  position: relative;
+  z-index: 3; /* select가 위로 올라와야 함 */
+}
+.selectBox .select option {
+   font-size: 18px;
+  background: white;
+  color: black;
+  padding: 5px;
+  font-size: 16px;
+}
+/* .selectBox .icoArrow {
+  position: absolute; 
+  top: 0; 
+  right: 0; 
+  z-index: 1; 
+  width: 35px; 
+  height: inherit;
+  border-left: 2px solid lightcoral;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ */
+ 
+ /* 검색단어 입력창 */
+.search_input{
+   font-size: 18px;
+   width: 700px;
+   height: 65px;
+   padding: 10px;
+   border: 1px solid #1b5ac2;
+   outline: none;
+   float: left;
+}
+ /* 검색단어입력 오른쪽 버튼(검색) */
+button{
+   font-size: 18px;
+   width: 80px;
+   height: 65px;
+   border: 0;
+   background: #1b5ac2;
+   outline: none;
+   float: right;
+   color: #ffffff;
+}
+
+/* 좌측 카테고리 */
+
+#left{
+   /* display: inline-block; */
+   font-size: 18px;
+   /* padding: 10px 0; */
+   border: 3px solid white;
+   display: flex;
+   justify-content: left;
+   align-items: center;
+}
+
+
+/* ':hover' : 마우스 올렸을때,  */
+/* 부모 : #lprod_hover, 자식,손자들: #left ul li  
+    ' #left ul li' (띄어쓰기: 자식의 손자들을 뜻함) */
+
+/* 자식의 손자들을 먼저 숨기기 */
+#left ul li {
+   display: none; /* 숨기기 */
+   /* color: white; */
+   margin-left: -40px;   /* 화면 좌측으로 여백 줄이기 : '-100' */
+   /* padding: 5px 0; */
+   width: 230px;
+   border: 1px solid lightgray;
+   background-color: white;
+    transition-duration: 500ms;
+  /* text-align: center; */
+}
+    
+/* 부모에 마우스 올렸을시 자식의손자들 다 보여줘라 */
+#lprod_hover:hover #left ul li {
+   display: block; /* 'block': 나타다나, 보이다 */
+}
+
+/* 자식의손자들(카테고리 아이콘, 패션의류/잡화)에 마우스 올렸을시 효과를 줌 */
+#left ul li a:hover {
+  font-weight: bold; /* 굵은체 */
+  color: #1b5ac2; /* 글자색 */
+  text-decoration-line: underline; /* 밑줄 */
+  text-decoration-color: currentColor; /* 밑줄의색을 color의 색으로 지정해라 */
+}
+
+/*  */
+/* #container {
+   display: flex;
+   width: 95%;
+   margin: 0 auto;
+   height: 500px;
+} */
+
+
+/* ':hover' : 마우스 올렸을때,  */
+/* 부모 : #lprod_hover, 자식,손자들: #left ul li  
+    ' #left ul li' (띄어쓰기: 자식의 손자들을 뜻함) */
+
+/* 자식의 손자들을 먼저 숨기기 */
+section ul li {
+  /*  display: none;  *//* 숨기기 */
+   /* color: white; */
+   /* margin-left: -40px; */   /* 화면 좌측으로 여백 줄이기 : '-100' */
+   /* padding: 5px 0; */
+   /* width: 230px; */
+   border: 1px solid lightgray;
+/*    background-color: white; */
+    transition-duration: 500ms;
+  /* text-align: center; */
+}
+    
+/* 부모에 마우스 올렸을시 자식의손자들 다 보여줘라 */
+#lprod_hover:hover section ul li {
+   display: block; /* 'block': 나타다나, 보이다 */
+}
+
+/* 자식의손자들(카테고리 아이콘, 패션의류/잡화)에 마우스 올렸을시 효과를 줌 */
+#left ul li a:hover {
+  font-weight: bold; /* 굵은체 */
+  color: #1b5ac2; /* 글자색 */
+  text-decoration-line: underline; /* 밑줄 */
+  text-decoration-color: currentColor; /* 밑줄의색을 color의 색으로 지정해라 */
+}
+#right {
+   background-color: #F8BBD0;
+   width: 25%;
+   padding: 2%;
+}
+
+d
+
+#main {
+  background-color: white;
+  width: 55%;
+  height: 100%;
+}
+
+#main iframe {
+  width: 100%;
+  height: 500px;
+}
+
+
+body {
+  background-color: white;
+}
+
+
+
+footer {
+  height: 50px;
+  margin-top: 20px;
+}
